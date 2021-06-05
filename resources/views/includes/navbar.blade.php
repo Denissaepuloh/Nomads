@@ -1,6 +1,6 @@
 <div class="container">
     <nav class="row navbar navbar-expand-lg navbar-light bg-white">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{{ route('home') }}">
         <img src="frontend/images/logo.png" alt="" />
         </a>
         <button
@@ -16,7 +16,7 @@
         <div class="collapse navbar-collapse" id="navb">
         <ul class="navbar-nav ml-auto mr-3">
             <li class="nav-item mx-md-2">
-            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link active" href="{{ route('home') }}">Home</a>
             </li>
             <li class="nav-item mx-md-2">
             <a class="nav-link" href="#">Paket Travel</a>
