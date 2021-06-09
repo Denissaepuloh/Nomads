@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTransactionsTable extends Migration
+class CreateTransactionDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateTransactionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('transactions', function (Blueprint $table) {
+        Schema::create('transaction_details', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('travel_packages_id');
-            $table->integer('users_id')->nullable();
-            $table->integer('addtional_visa');
-            $table->integer('transaction_total');
-            $table->string('transaction_status');
-            // IN_CART, PENDING, SUCCESS, CANCEL, FAILED
+            $table->integer('transactions_id');
+            $table->string('username');
+            $table->string('nationality')->nullable();
+            $table->boolean('is_visa');
+            $table->date('doe_passport');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -33,6 +32,6 @@ class CreateTransactionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transactions');
+        Schema::dropIfExists('transaction_details');
     }
 }
